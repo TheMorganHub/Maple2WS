@@ -24,6 +24,5 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile fileTree(dir: 'libs-ext', include: ['*.jar'])
 }
