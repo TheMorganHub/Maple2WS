@@ -15,7 +15,7 @@ public class MapleResultWrapper {
     }
 
     public String getErrorMessage() {
-        return mapleResult.hasErrors() ? mapleResult.getException().getMessage() : "";
+        return mapleResult.hasErrors() ? "(ERR: " + mapleResult.getException().getErrorCode() + ") " + mapleResult.getException().getMessage() : "";
     }
 
     public String getSqlStatements() {
