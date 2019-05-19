@@ -1,20 +1,21 @@
 package com.morgandev.app;
 
 import com.morgandev.app.bootstrap.MapleRuntime;
+import com.morgandev.app.result.MapleResult;
 
 public class MapleResponse {
 
-    private String sqlStatement;
+    private MapleResult mapleResult;
 
     public MapleResponse() {
     }
 
     public MapleResponse(MapleRequest request) {
         MapleRuntime instance = new MapleRuntime();
-        this.sqlStatement = instance.convert(request.getStatement());
+        this.mapleResult = instance.convert(request.getStatement());
     }
 
-    public String getSqlStatement() {
-        return sqlStatement;
+    public MapleResultWrapper getResult() {
+        return new MapleResultWrapper(mapleResult);
     }
 }
